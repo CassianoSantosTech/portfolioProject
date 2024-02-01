@@ -1,0 +1,44 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    color: var(--text-primary);
+}
+
+.header h1 {
+    font-weight: 600;
+    font-size: 38px;
+    line-height: 42px;
+}
+
+.header h2 {
+    font-style: italic;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 30px;
+}
+
+.header img {
+    border-radius: 24px;
+}
+
+@media (min-width: 768px) {
+    .header {
+        flex-direction: row-reverse;
+    }
+
+    .header h1 {
+        font-size: 36px;
+        line-height: 54px;
+    }
+
+    .header h2 {
+        font-style: normal;
+        font-size: 30px;
+        line-height: 1.5; /* Alterado para um valor apropriado, como '1.5' ou '30px' */
+    }
+
+    .header img {
+        border-radius: 100%;
+        border: 2px solid white;
+    }
+}
