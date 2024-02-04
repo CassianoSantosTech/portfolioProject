@@ -9,10 +9,10 @@ export default function Header() {
            <h2>Software Developer</h2>
        </div>
        <Image
-            src="/me.jpeg"
+            src="/me-new.jpeg"
             alt="Cassiano image"
             width={325}
-            height={310}
+            height={325}
             priority
         />
    </div>

@@ -1,8 +1,8 @@
 import Header from "./components/header/header";
-
+import "./styles/home.css"
 export default function Home() {
   return (
-    <main className="">
+    <main className="container">
        <Header />
             <div className="experience">
               <h3>Experience</h3>

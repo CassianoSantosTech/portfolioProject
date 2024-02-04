@@ -1,9 +1,6 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
 :root {
   --text-primary: white;
+  --text-secondary: #B3B3B3;
   --bg-primary: #2C2C2C;
 }
 
