@@ -1,19 +1,12 @@
+import Experience from "./components/experience/experience";
 import Header from "./components/header/header";
 import "./styles/home.css"
 export default function Home() {
   return (
     <main className="container">
        <Header />
-            <div className="experience">
-              <h3>Experience</h3>
-              <p>Texto de experiencia</p>
-
-              <div className="experience-time">
-
-              </div>
-
+       <Experience />
               <div className="info">
-
                 <h3>Languages</h3>
                 <div className="languages-info">
                   <span> 🇺🇸 EN - Intermediary</span>
@@ -34,10 +27,6 @@ export default function Home() {
                 </div>
                 <button>contact me</button>
               </div>
-
-
-
-            </div>
     </main>
   );
 }
