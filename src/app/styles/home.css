@@ -1,15 +1,43 @@
 .container {
-    padding: 40px 32px ;
+    padding: 40px 32px;
     display: grid;
     gap: 24px;
     justify-items: center;
     grid-template-rows: repeat(4, auto);
     grid-template-areas: 
-    "header"
-    "btns"
-    "experience"
-    "info";
+        "header"
+        "btns"
+        "experience"
+        "info";
+}
 
+.container .buttons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+    grid-area: btns;
+}
+
+.container .buttons .btn-primary {
+    background: linear-gradient(90deg, #777CF4 2.62%, #F47777 93.38%);
+    border-radius: 24px;
+    width: 325px;
+    padding: 12px;
+    text-align: center;
+    text-decoration: none;
+    color: var(--text-primary);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 30px;
+    text-transform: uppercase;
+    border: none;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    justify-content: center;
 }
 
 @media (min-width: 768px) {
@@ -22,9 +50,7 @@
         justify-items: start;
         justify-content: space-between;
         grid-template-areas: 
-        "header info"
-        "experience epity1"
-        "epity2 btns";
+            "header info"
+            "experience btns";
     }
-    
 }
