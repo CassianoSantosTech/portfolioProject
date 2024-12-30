@@ -1,3 +1,4 @@
+import { EmailIcon } from "../icons/email";
 import { GitHubIcon } from "../icons/gitHub";
 import { InstagramIcon } from "../icons/insta";
 import { LinkedinIcon } from "../icons/linkedin";
@@ -14,6 +15,9 @@ export function SocialBtns() {
             </a>
             <a href="https://github.com/CassianoSantosTech">
                 <GitHubIcon />
+            </a>
+            <a href="mailto:cassianosantosneto@gmail.com?subject=Olá Cassiano&body=Olá Cassiano, tudo bem? Gostaria de falar com você sobre...">
+                <EmailIcon />
             </a>
         </div>
     )
