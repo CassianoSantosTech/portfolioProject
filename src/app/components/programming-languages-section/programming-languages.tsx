@@ -38,7 +38,7 @@ export default function ProgrammingLanguages() {
 
     return (
         <div className='programming-section'>
-            <SectionTitle text="Programming languages" />
+            <SectionTitle text="Skills and Tools" />
             <div className="programming-languages-container">
                 <button
                     onClick={handlePrev}
