@@ -3,24 +3,29 @@
     flex-direction: column;
     align-items: center;
     width: 100%;
-    gap: 24px;
+    /* gap: 24px; */
     max-width: 500px;
     grid-area: info;
 }
 
 .infos .languages-info {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     gap: 24px;
-    align-items: flex-start;
+    align-items: center;
+    width: 100%;
+}
+
+.infos .educational-info {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+    align-items: center;
     width: 100%;
 }
 
 .infos span {
     color: var(--text-secondary);
-    font-weight: 300;
-    font-size: 18px;
-    line-height: 28px;
 }
 
 @media (min-width: 768px) {
@@ -29,8 +34,6 @@
     }
 
     .infos span {
-        font-size: 20px;
-        line-height: 36px;
         text-align: start;
     }
 }
