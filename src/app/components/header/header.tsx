@@ -1,22 +1,21 @@
-import Image from "next/image";
+import WindowControlCircles from '../window-control-circles/window-control-circles';
 import "./header.css";
 
 export default function Header() {
   return (
-   <div className="header">
-       <div>
-           <h1>Hi i`am Cassiano! 👋 </h1>
-           <h2>Software Developer</h2>
-       </div>
-       
-       <Image
-            src="/me-new.jpeg"
-            alt="Cassiano image"
-            width={325}
-            height={325}
-            priority
-        />
-   </div>
- 
+    <header className="header">
+      <div className="header-left">
+        <WindowControlCircles />
+      </div>
+      <nav>
+        <ul className="nav-links">
+          <li><a href="#welcome">Welcome</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contacts">Contacts</a></li>
+        </ul>
+      </nav>
+    </header>
   );
+
 }

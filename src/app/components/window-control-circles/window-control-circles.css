@@ -1,0 +1,26 @@
+.window-control-circles {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    /* Espaçamento entre os círculos */
+}
+
+.circle {
+    width: 12px;
+    /* Tamanho do círculo */
+    height: 12px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+.circle.red {
+    background-color: #ff5f56;
+}
+
+.circle.yellow {
+    background-color: #ffbd2e;
+}
+
+.circle.green {
+    background-color: #27c93f;
+}
