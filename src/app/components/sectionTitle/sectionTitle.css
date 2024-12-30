@@ -4,7 +4,7 @@
     text-align: center;
     line-height: 28px;
     color: var(--text-primary);
-    
+    margin-bottom: 10px;
 }
 
 @media (min-width: 768px) {
@@ -12,5 +12,7 @@
         font-size: 24px;
         line-height: 36px;
         text-align: start;
+        margin-bottom: 10px;
+
     }
 }
