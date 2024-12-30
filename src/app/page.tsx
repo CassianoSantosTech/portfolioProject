@@ -1,23 +1,21 @@
-import Image from "next/image";
-import Experience from "./components/experience/experience";
+import AboutSection from "./components/about-section/about-section";
+import ContactsSection from "./components/contacts-section/contacts-section";
+import Footer from "./components/footer/footer";
 import Header from "./components/header/header";
-import { Information } from "./components/information/information";
-import "./styles/home.css"
-import { EmailIcon } from "./components/icons/email";
-import { SocialBtns } from "./components/social-btns/social-btns";
+import ProjectSection from "./components/projects-section/projects-section";
+import WelcomeSection from "./components/welcome-section/welcome-section";
+import "./styles/home.css";
 export default function Home() {
   return (
-    <main className="container">
-       <Header />
-       <Experience />
-       <Information />
-  
-              <div className="buttons">
-                  <SocialBtns />
-                <a className="btn-primary" href="mailto:cassianosantosneto@gmail.com">contact me
-                  <EmailIcon/>
-                 </a>
-              </div>
-    </main>
+    <div className="app">
+      <Header />
+      <main>
+        <WelcomeSection />
+        <AboutSection />
+        <ProjectSection />
+        <ContactsSection />
+      </main>
+      <Footer />
+    </div>
   );
 }
