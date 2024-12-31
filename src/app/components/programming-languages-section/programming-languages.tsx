@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { SectionTitle } from '../sectionTitle/sectionTitle';
 import './programming-languages.css';
 
@@ -10,8 +10,6 @@ const languages = [
     { name: 'TypeScript', icon: '/programming-languages/typescript.png' },
     { name: 'React', icon: '/programming-languages/react.png' },
     { name: 'Angular', icon: '/programming-languages/angular.png' },
-    // { name: 'HTML', icon: '/programming-languages/html.png' },
-    // { name: 'CSS', icon: '/programming-languages/css.png' },
     { name: 'Bootstrap', icon: '/programming-languages/bootstrap.png' },
     { name: 'Tailwind', icon: '/programming-languages/tailwind.png' },
     { name: 'Node.js', icon: '/programming-languages/nodejs.png' },
@@ -23,8 +21,24 @@ const languages = [
 
 export default function ProgrammingLanguages() {
     const [startIndex, setStartIndex] = useState(0);
+    const [itemsToShow, setItemsToShow] = useState(4);
 
-    const visibleLanguages = languages.slice(startIndex, startIndex + 5);
+    // Adjust the number of visible items based on screen size
+    useEffect(() => {
+        const updateItemsToShow = () => {
+            if (window.innerWidth <= 768) {
+                setItemsToShow(3);
+            } else {
+                setItemsToShow(4);
+            }
+        };
+
+        updateItemsToShow();
+        window.addEventListener('resize', updateItemsToShow);
+        return () => window.removeEventListener('resize', updateItemsToShow);
+    }, []);
+
+    const visibleLanguages = languages.slice(startIndex, startIndex + itemsToShow);
 
     const handlePrev = () => {
         setStartIndex((prevIndex) => (prevIndex > 0 ? prevIndex - 1 : 0));
@@ -32,12 +46,12 @@ export default function ProgrammingLanguages() {
 
     const handleNext = () => {
         setStartIndex((prevIndex) =>
-            prevIndex + 5 < languages.length ? prevIndex + 1 : prevIndex
+            prevIndex + itemsToShow < languages.length ? prevIndex + 1 : prevIndex
         );
     };
 
     return (
-        <div className='programming-section'>
+        <div className="programming-section">
             <SectionTitle text="Skills and Tools" />
             <div className="programming-languages-container">
                 <button
@@ -61,13 +75,12 @@ export default function ProgrammingLanguages() {
                 </div>
                 <button
                     onClick={handleNext}
-                    disabled={startIndex + 5 >= languages.length}
+                    disabled={startIndex + itemsToShow >= languages.length}
                     className="navigation-button"
                 >
                     →
                 </button>
             </div>
         </div>
-
     );
 }
