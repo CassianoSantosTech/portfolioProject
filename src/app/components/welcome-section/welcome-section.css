@@ -9,6 +9,7 @@
 }
 
 @keyframes blink {
+
   from,
   to {
     border-right-color: transparent;
@@ -29,6 +30,13 @@
     opacity: 1;
     transform: translateY(0);
   }
+}
+
+.img-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .welcome-section {

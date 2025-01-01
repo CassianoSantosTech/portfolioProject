@@ -1,36 +1,61 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Cassiano Santos - Personal Portfolio
 
-## Getting Started
+Bem-vindo ao repositório do meu portfólio pessoal. Este projeto foi desenvolvido para demonstrar minhas habilidades como desenvolvedor Front end, compartilhar meus projetos e conectar-me com outros profissionais e oportunidades.
 
-First, run the development server:
+## 🎯 Objetivo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+O objetivo principal deste projeto é apresentar uma página pessoal responsiva, moderna e minimalista que destaque minha experiência, habilidades e projetos.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Tecnologias Utilizadas
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js**: Framework React para renderização do lado do servidor e construção de aplicações web modernas.
+- **React**: Biblioteca JavaScript para construção de interfaces de usuário.
+- **Tailwind CSS**: Framework de estilos para criação de designs rápidos e consistentes.
+- **CSS Puro**: Para customizações específicas.
+- **Vercel**: Hospedagem do projeto para deploy contínuo e rápido.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 🚀 Funcionalidades
 
-## Learn More
+- **Seções Dinâmicas**:
+  - **Welcome**: Boas-vindas com uma animação elegante.
+  - **About Me**: Informações sobre minha experiência e habilidades.
+  - **Skills and Tools**: Linguagens de programação e ferramentas com um carrossel interativo.
+  - **Projects**: Lista de projetos com links para o repositório no GitHub.
+  - **Contato**: Links para redes sociais e email.
 
-To learn more about Next.js, take a look at the following resources:
+- **Responsividade**: Totalmente adaptado para dispositivos móveis e desktops.
+- **Acessibilidade**: Uso de semântica HTML e boas práticas para garantir uma experiência inclusiva.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🖼️ Layout
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+O design foi pensado para transmitir profissionalismo e modernidade, utilizando cores escuras com destaques em verde e azul. Elementos minimalistas foram adotados para foco no conteúdo.
 
-## Deploy on Vercel
+## 🌐 Deploy
+O projeto está hospedado no Vercel. Toda alteração no código do repositório principal é automaticamente publicada no endereco abaixo:
+*https://cassianosantos-dev.vercel.app/*
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## 🗂️ Possíveis Melhorias Futuras
+Integração com APIs externas para projetos dinâmicos.
+Seção de blog para compartilhar artigos técnicos.
+Adicionar testes automatizados com Jest e React Testing Library.
+Melhorar animações para mais interatividade.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+## 📬 Contato
+Se você deseja entrar em contato comigo ou colaborar, pode me enviar um email:
+cassianosantosneto@gmail.com
+
+## 📦 Estrutura do Projeto
+
+```plaintext
+.
+├── public/               # Assets públicos (imagens, ícones)
+├── src/
+│   ├── app/              # Estrutura principal do Next.js
+│   │   ├── components/   # Componentes reutilizáveis
+│   │   ├── pages/        # Páginas do projeto
+│   │   └── styles/       # Estilos globais e específicos
+├── .gitignore            # Arquivos a serem ignorados pelo Git
+├── package.json          # Dependências e scripts do projeto
+└── README.md             # Documentação do projeto
+
+

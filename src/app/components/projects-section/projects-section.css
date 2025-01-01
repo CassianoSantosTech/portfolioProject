@@ -30,11 +30,12 @@
 .projects-section a {
     color: #64ffda;
     text-decoration: none;
-    pointer-events: none; /*enquanto n há projetos disponíveis*/
+    /* pointer-events: none; enquanto n há projetos disponíveis */
 }
 
 .projects-section a:hover {
-    text-decoration: underline;
-    cursor: none;
-    pointer-events: none; /*enquanto n há projetos disponíveis*/
+    text-decoration: none;
+    color: white;
+    /* cursor: none; */
+    /* pointer-events: none; enquanto n há projetos disponíveis */
 }
