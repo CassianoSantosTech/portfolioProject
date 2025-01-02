@@ -3,8 +3,8 @@ import './projects-section.css';
 export default function ProjectSection() {
 
     const projects = [
-        { name: "API Greencycle", description: "API contruída para gerenciar plataforma gestão de resíduos sólidos usando JAVA 21. Mais informações no README do projeto!", link: "https://github.com/CassianoSantosTech/greecycle-fiap" },
-        { name: "Página pessoal", description: "Página construída para passar as principais informações pessoais de forma genérica, podendo facilmente ser ajustado para uma outra pessoa. Linguagens e tecnologias utilizadas: TypeScript e ReactJS!", link: "https://github.com/CassianoSantosTech/portfolioProject" },
+        { name: "Greencycle API", description: "API contruída para gerenciar plataforma gestão de resíduos sólidos usando JAVA 21. Mais informações no README do projeto!", link: "https://github.com/CassianoSantosTech/greecycle-fiap" },
+        { name: "Personal page", description: "Página construída para passar as principais informações pessoais de forma genérica, podendo facilmente ser ajustado para uma outra pessoa. Linguagens e tecnologias utilizadas: TypeScript e ReactJS!", link: "https://github.com/CassianoSantosTech/portfolioProject" },
     ]
 
     return (
