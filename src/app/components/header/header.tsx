@@ -1,11 +1,13 @@
+import { HeaderProps } from '@/app/page';
 import WindowControlCircles from '../window-control-circles/window-control-circles';
 import "./header.css";
 
-export default function Header() {
+export default function Header({ onChangeViewMode }: HeaderProps) {
+
   return (
     <header className="header">
       <div className="header-left">
-        <WindowControlCircles />
+        <WindowControlCircles onChangeViewMode={onChangeViewMode} />
       </div>
       <nav>
         <ul className="nav-links">
