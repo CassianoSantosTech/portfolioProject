@@ -1,32 +1,140 @@
 .header {
-    position: fixed;
+    position: relative;
     top: 0;
+    left: 0;
     width: 100%;
+    height: 50px;
     background-color: #112240;
-    padding: 10px 20px;
     z-index: 10;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 16px;
+    gap: 16px;
+}
+
+.header .window-control-circles {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.device-icons {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    width: 100%;
+    gap: 8px;
+}
+
+.tooltip-container {
+    position: relative;
+    display: inline-block;
+}
+
+.tooltip {
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #112240;
+    color: #fff;
+    text-align: center;
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    line-height: 1.4;
+    white-space: nowrap;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+}
+
+.tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: #112240 transparent transparent transparent;
+}
+
+.tooltip-container:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+}
+
+.icon-phone,
+.icon-mac {
+    font-size: 20px;
+    color: #64ffda;
+    display: none;
+}
+
+.app.iphone .icon-phone {
+    display: block;
+}
+
+.app.iphone .icon-mac {
+    display: none;
+}
+
+.app.macbook .icon-mac {
+    display: block;
+}
+
+.app.macbook .icon-phone {
+    display: none;
 }
 
 .nav-links {
     display: flex;
-    justify-content: flex-end;
-    gap: 20px;
+    gap: 16px;
+    align-items: center;
 }
 
 .nav-links a {
     color: #64ffda;
     font-weight: bold;
-    font-size: 14px;
+    text-transform: uppercase;
+    font-size: 12px;
 }
 
 .nav-links a:hover {
     color: #ccd6f6;
 }
 
-/* .header-left {
-    text-align: left;
-} */
+.hamburger {
+    display: none;
+    flex-direction: column;
+    gap: 4px;
+    cursor: pointer;
+}
+
+.hamburger .bar {
+    width: 20px;
+    height: 2px;
+    background-color: #64ffda;
+}
+
+.app.iphone .hamburger {
+    display: flex;
+}
+
+.app.iphone .nav-links {
+    display: none;
+}
+
+.app.iphone .nav-links.open {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 50px;
+    right: 10px;
+    background-color: #112240;
+    padding: 8px;
+    border-radius: 8px;
+}

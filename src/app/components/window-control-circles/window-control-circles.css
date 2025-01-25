@@ -2,25 +2,48 @@
     display: flex;
     align-items: center;
     gap: 8px;
-    /* Espaçamento entre os círculos */
 }
 
 .circle {
     width: 12px;
-    /* Tamanho do círculo */
     height: 12px;
     border-radius: 50%;
     display: inline-block;
+    cursor: pointer;
+    position: relative;
+    animation: pulse 2s infinite ease-in-out;
 }
 
 .circle.red {
     background-color: #ff5f56;
 }
- 
+
 .circle.yellow {
     background-color: #ffbd2e;
 }
 
 .circle.green {
     background-color: #27c93f;
+}
+
+.circle:hover {
+    transform: scale(1.2) !important;
+    transition: transform 0.2s ease-in-out;
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    }
+
+    50% {
+        transform: scale(1.1);
+        box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    }
+
+    100% {
+        transform: scale(1);
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    }
 }

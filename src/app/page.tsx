@@ -18,17 +18,20 @@ export default function Home() {
 
   const handleChangeViewMode = (mode: string) => {
     setViewMode(mode);
-  }
+  };
+
   return (
     <div className={`app ${viewMode}`}>
-      <Header onChangeViewMode={handleChangeViewMode} />
-      <main>
-        <WelcomeSection />
-        <AboutSection />
-        <ProjectSection />
-        <ContactsSection />
-        <Footer />
-      </main>
+      <div className="frame">
+        <Header onChangeViewMode={handleChangeViewMode} />
+        <main>
+          <WelcomeSection />
+          <AboutSection />
+          <ProjectSection />
+          <ContactsSection />
+          <Footer />
+        </main>
+      </div>
     </div>
   );
 }
