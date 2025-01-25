@@ -1,5 +1,4 @@
 .header {
-    position: relative;
     top: 0;
     left: 0;
     width: 100%;
@@ -11,6 +10,10 @@
     justify-content: space-between;
     padding: 0 16px;
     gap: 16px;
+}
+
+.app.normal .header {
+    position: fixed !important;
 }
 
 .header .window-control-circles {
