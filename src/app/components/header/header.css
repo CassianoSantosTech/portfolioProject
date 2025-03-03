@@ -41,7 +41,7 @@
     position: absolute;
     top: 120%;
     left: 50%;
-    transform: translateX(-50%);
+    transform: translateX(-250%);
     background-color: #112240;
     color: #fff;
     text-align: center;
