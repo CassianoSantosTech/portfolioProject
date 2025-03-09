@@ -32,6 +32,18 @@
   }
 }
 
+@keyframes morphing {
+  0% {
+      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+  50% {
+      border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+  }
+  100% {
+      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  }
+}
+
 .img-container {
   width: 100%;
   display: flex;
@@ -52,13 +64,12 @@
 }
 
 .profile-photo {
-  border-radius: 50%;
+  border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+  animation: morphing 8s ease-in-out infinite;
   width: 300px;
   height: 300px;
   margin-bottom: 20px;
   border: 2px solid #64ffda;
-  animation: fadeIn 2s ease-in-out;
-  /* Gradual appearance */
 }
 
 .welcome-content h1 {
@@ -67,8 +78,7 @@
   overflow: hidden;
   white-space: nowrap;
   border-right: 2px solid #64ffda;
-  animation: typing 4s steps(30, end), blink 1s step-end 6;
-  /* Stops blinking after 6s */
+  animation: typing 4s steps(30, end), blink 1s step-end infinite;
   animation-fill-mode: forwards;
 }
 
@@ -77,5 +87,4 @@
   color: #ccd6f6;
   opacity: 0;
   animation: fadeIn 2s ease-in-out 4s forwards;
-  /* Delayed fade-in for the paragraph */
 }
