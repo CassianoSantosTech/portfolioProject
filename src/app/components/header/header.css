@@ -39,7 +39,7 @@
     visibility: hidden;
     opacity: 0;
     position: absolute;
-    top: 150%;
+    top: 180%;
     transform: translateX(-200%);
     background-color: #112240;
     color: #fff;
