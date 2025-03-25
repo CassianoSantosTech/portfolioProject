@@ -1,7 +1,11 @@
 .contacts-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     padding: 80px 20px;
     text-align: center;
     background-color: #112240;
+    height: 90vh;
 }
 
 .contacts-section h2 {
