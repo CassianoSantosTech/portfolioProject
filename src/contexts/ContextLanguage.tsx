@@ -58,13 +58,8 @@ const LanguageContext = createContext<any>({
 
 export const LanguageProvider = ({ children }: any) => {
 
-    const [language, setLanguage] = useState<any>(() => {
-        if (typeof window !== "undefined") {
-            return localStorage.getItem("lang") || "pt";
-        }
-        return "pt";
-    });
-    
+    const [language, setLanguage] = useState<any>(localStorage.getItem("lang") || "pt");
+
     const toggleLanguage = () => {
         const newLang = language === "pt" ? "en" : "pt";
         setLanguage(newLang);
