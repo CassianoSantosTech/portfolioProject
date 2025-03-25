@@ -50,15 +50,15 @@ const translations = {
     }
 };
 
-const LanguageContext = createContext({
+const LanguageContext = createContext<any>({
     language: "pt",
     toggleLanguage: () => { },
     translations: translations,
 });
 
-export const LanguageProvider = ({ children }) => {
+export const LanguageProvider = ({ children }: any) => {
 
-    const [language, setLanguage] = useState(localStorage.getItem("lang") || "pt");
+    const [language, setLanguage] = useState<any>(localStorage.getItem("lang") || "pt");
 
     const toggleLanguage = () => {
         const newLang = language === "pt" ? "en" : "pt";
