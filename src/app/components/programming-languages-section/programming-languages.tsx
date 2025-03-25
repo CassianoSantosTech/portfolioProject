@@ -4,6 +4,7 @@
 import { useState, useEffect } from 'react';
 import { SectionTitle } from '../sectionTitle/sectionTitle';
 import './programming-languages.css';
+import { useLanguage } from '@/contexts/ContextLanguage';
 
 const languages = [
     { name: 'JavaScript', icon: '/programming-languages/js.png' },
@@ -22,6 +23,7 @@ const languages = [
 export default function ProgrammingLanguages() {
     const [startIndex, setStartIndex] = useState(0);
     const [itemsToShow, setItemsToShow] = useState(4);
+    const { language, translations } = useLanguage();
 
     // Adjust the number of visible items based on screen size
     useEffect(() => {
@@ -52,7 +54,7 @@ export default function ProgrammingLanguages() {
 
     return (
         <div className="programming-section">
-            <SectionTitle text="Skills and Tools" />
+            <SectionTitle text={translations[language].skillsAndTools} />
             <div className="programming-languages-container">
                 <button
                     onClick={handlePrev}

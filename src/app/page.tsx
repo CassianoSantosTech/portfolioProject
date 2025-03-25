@@ -8,6 +8,7 @@ import ProjectSection from "./components/projects-section/projects-section";
 import WelcomeSection from "./components/welcome-section/welcome-section";
 import "./globals.css";
 import "./styles/home.css";
+import { LanguageProvider } from "@/contexts/ContextLanguage";
 
 export interface HeaderProps {
   onChangeViewMode: (viewMode: string) => void;
@@ -21,17 +22,19 @@ export default function Home() {
   };
 
   return (
-    <div className={`app ${viewMode}`}>
-      <div className="frame">
-        <Header onChangeViewMode={handleChangeViewMode} />
-        <main>
-          <WelcomeSection />
-          <AboutSection />
-          <ProjectSection />
-          <ContactsSection />
-          <Footer />
-        </main>
+    <LanguageProvider>
+      <div className={`app ${viewMode}`}>
+        <div className="frame">
+          <Header onChangeViewMode={handleChangeViewMode} />
+          <main>
+            <WelcomeSection />
+            <AboutSection />
+            <ProjectSection />
+            <ContactsSection />
+            <Footer />
+          </main>
+        </div>
       </div>
-    </div>
+    </LanguageProvider>
   );
 }

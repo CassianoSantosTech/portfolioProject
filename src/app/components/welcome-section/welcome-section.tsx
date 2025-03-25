@@ -1,8 +1,11 @@
 /* eslint-disable @next/next/no-img-element */
 /* eslint-disable react/no-unescaped-entities */
+import { useLanguage } from '@/contexts/ContextLanguage';
 import './welcome-section.css';
 
 export default function WelcomeSection() {
+
+    const { language, translations } = useLanguage();
 
     return (
         <section id="welcome" className="welcome-section">
@@ -11,7 +14,7 @@ export default function WelcomeSection() {
                     <img src="/me-new.jpeg" alt="Cassiano Photo" className="profile-photo" />
                 </div>
                 <h1>Cassiano Santos</h1>
-                <p>A Full Stack Developer passionate about creating clean and efficient code.</p>
+                <p>{translations[language].welcomeDescription}</p>
             </div>
         </section>
     );

@@ -1,21 +1,24 @@
 
-import { SectionTitle } from "../sectionTitle/sectionTitle"
-import "./information.css"
+import { useLanguage } from "@/contexts/ContextLanguage";
+import { SectionTitle } from "../sectionTitle/sectionTitle";
+import "./information.css";
 
 export function Information() {
-  return (
+    const { language, translations } = useLanguage();
+
+    return (
         <div className="infos">
-            <SectionTitle text="Languages" />
+            <SectionTitle text={translations[language].languages} />
             <div className="languages-info">
-                <span> 🇧🇷 PT-BR Native Speaker</span>
-                <span> 🇺🇸 EN - Intermediary</span>
+                <span>{translations[language].portugueseLanguage}</span>
+                <span>{translations[language].englishLanguage}</span>
             </div>
 
-            <SectionTitle text="Educational" />
+            <SectionTitle text={translations[language].educational} />
             <div className="educational-info">
-                <span> 🎓 Graduated in Systems Analysis and Development at FIAP</span>
+                <span>{translations[language].educationalDescription}</span>
             </div>
 
         </div>
-  );
+    );
 }
