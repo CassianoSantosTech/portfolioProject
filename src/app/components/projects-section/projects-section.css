@@ -1,11 +1,7 @@
 .projects-section {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
     padding: 80px 20px;
     text-align: center;
     background-color: #0a192f;
-    height: 100vh;
 }
 
 .projects-section h2 {
