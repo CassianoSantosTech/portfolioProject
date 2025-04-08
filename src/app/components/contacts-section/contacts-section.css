@@ -1,7 +1,13 @@
 .contacts-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     padding: 80px 20px;
     text-align: center;
     background-color: #112240;
+    min-height: 90vh;
+    box-sizing: border-box;
 }
 
 .contacts-section h2 {
