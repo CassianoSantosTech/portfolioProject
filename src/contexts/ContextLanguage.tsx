@@ -34,7 +34,7 @@ const translations = {
         phoneFrame: "Formato celular",
         laptopFrame: "Formato notebook",
         welcomeDescription: "Um Desenvolvedor Full Stack apaixonado por criar código limpo e eficiente.",
-        aboutDescription: "Estou constantemente aprendendo e me mantendo atualizado com novas tecnologias. Acredito na melhoria contínua e gosto de trabalhar em equipes que colaboram e inovam. No meu tempo livre, foco em manter um estilo de vida saudável jogando basquete e surfando.Essas atividades me ajudam a manter a energia e o equilíbrio tanto na vida pessoal quanto profissional.",
+        aboutDescription: "Estou constantemente aprendendo e me mantendo atualizado com novas tecnologias. Acredito na melhoria contínua e gosto de trabalhar em equipes que colaboram e inovam. No meu tempo livre, foco em manter um estilo de vida saudável jogando basquete e surfando. Essas atividades me ajudam a manter a energia e o equilíbrio tanto na vida pessoal quanto profissional.",
         languages: "Idiomas",
         portugueseLanguage: "🇧🇷 PT-BR idioma nativo",
         englishLanguage: "🇺🇸 EN - Inglês",
