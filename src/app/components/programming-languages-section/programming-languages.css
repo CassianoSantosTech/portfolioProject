@@ -15,25 +15,45 @@
     background-color: white;
     border-radius: 10px;
     width: 100%;
-    max-width: 50vw;
+    max-width: 100vw;
     gap: 5px;
 }
 
-.languages-list {
+.languages-list.slider {
     display: flex;
-    justify-content: space-around;
-    overflow: hidden;
+    align-items: center;
+    gap: 32px;
     width: 100%;
-    max-width: 900px;
-    gap: 10px;
+    padding: 10px 0;
+    overflow-x: auto;
+    /* scrollbar-width: none;
+    -ms-overflow-style: none;
+    scroll-behavior: smooth; */
+}
+.languages-list.slider::-webkit-scrollbar {
+    display: none;
 }
 
 .language-item {
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     text-align: center;
-    width: 100px;
+    width: 110px;
+    min-width: 110px;
+    /* background: #192a45; */
+    border-radius: 14px;
+    box-shadow: 0 2px 8px 0 rgba(0,0,0,0.08);
+    padding: 18px 8px 12px 8px;
+    margin: 0 4px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: grab;
+}
+.language-item:active {
+    cursor: grabbing;
+    transform: scale(0.97);
+    box-shadow: 0 1px 4px 0 rgba(0,0,0,0.12);
 }
 
 .language-icon {
