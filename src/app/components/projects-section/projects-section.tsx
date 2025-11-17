@@ -10,21 +10,28 @@ export default function ProjectSection() {
 
     const projects = [
         {
-            name: "Greencycle API",
-            description: "API contruída para gerenciar plataforma gestão de resíduos sólidos usando JAVA 21. Mais informações no README do projeto!",
-            sourceLink: "https://github.com/CassianoSantosTech/greecycle-fiap",
-            img: '/greenclycle-logo.png',
-            type: "Backend-project"
-        },
-        {
             name: `${translations[language].personalPage}`,
             description: "Página construída para passar as principais informações pessoais de forma genérica, podendo facilmente ser ajustado para uma outra pessoa. Linguagens e tecnologias utilizadas: TypeScript e ReactJS!",
             sourceLink: "https://github.com/CassianoSantosTech/portfolioProject",
             demoLink: "https://cassianosantos-dev.vercel.app/",
-            img: '/new-personal-page.png',
+            img: '/face-id-96.png',
             type: "Run front-end"
         },
-        { name: `${translations[language].comingSoon}`, description: "Coming soon", link: "/", img: '/soon.png', disabled: true },
+        {
+            name: "Greencycle API",
+            description: "API contruída para gerenciar plataforma gestão de resíduos sólidos usando JAVA 21. Mais informações no README do projeto!",
+            sourceLink: "https://github.com/CassianoSantosTech/greecycle-fiap",
+            img: '/bay-leaf-96.png',
+            type: "Backend-project"
+        },
+        {
+            name: "Dev Task & Time Tracker",
+            description: "Organize your daily tasks and track the time spent on each one.",
+            sourceLink: "https://github.com/CassianoSantosTech/dev-task-tracker",
+            demoLink: "https://chromewebstore.google.com/detail/Dev%20Task%20%26%20Time%20Tracker/bjchfgehhcaeonecaopcmbaomdndmlca",
+            img: '/dev_track_icon_128.png',
+            type: "Run front-end",
+        },
         { name: `${translations[language].comingSoon}`, description: "Coming soon", link: "/", img: '/soon.png', disabled: true },
         { name: `${translations[language].comingSoon}`, description: "Coming soon", link: "/", img: '/soon.png', disabled: true },
         { name: `${translations[language].comingSoon}`, description: "Coming soon", link: "/", img: '/soon.png', disabled: true },
