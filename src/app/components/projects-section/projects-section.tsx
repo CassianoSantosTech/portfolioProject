@@ -13,6 +13,7 @@ export default function ProjectSection() {
             name: "Greencycle API",
             description: "API contruída para gerenciar plataforma gestão de resíduos sólidos usando JAVA 21. Mais informações no README do projeto!",
             sourceLink: "https://github.com/CassianoSantosTech/greecycle-fiap",
+            demoLink: "https://github.com/CassianoSantosTech/greecycle-fiap",
             img: '/bay-leaf-96.png',
             type: "Backend project"
         },

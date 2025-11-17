@@ -151,11 +151,17 @@
     font-size: 12px;
     font-weight: 500;
     text-decoration: none;
-}
-
-.project-type.run-frontend {
+    display: none;
     cursor: pointer;
 }
+
+.project-card:hover .project-type {
+    display: block;
+}
+
+/* .project-type.run-frontend {
+    cursor: pointer;
+} */
 
 .project-type:hover {
     background-color: whitesmoke;
