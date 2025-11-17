@@ -4,20 +4,20 @@
   flex-direction: column;
   padding: 80px 20px;
   text-align: center;
-  background-color: #112240;
+  background-color: white;
   min-height: 100vh;
   box-sizing: border-box;
 }
 
 .about-section h2 {
   font-size: 28px;
-  color: #64ffda;
+  color: black;
   margin-bottom: 20px;
 }
 
 .about-section p {
   font-size: 16px;
-  color: #ccd6f6;
+  color: black;
   margin-bottom: 30px;
   text-align: justify;
 
@@ -40,8 +40,8 @@
 }
 
 .tech-stack li {
-  background-color: #0a192f;
-  color: #64ffda;
+  background-color: white;
+  color: black;
   padding: 10px 20px;
   border-radius: 20px;
   font-size: 14px;

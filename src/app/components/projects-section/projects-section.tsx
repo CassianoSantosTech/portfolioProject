@@ -24,10 +24,10 @@ export default function ProjectSection() {
             img: '/new-personal-page.png',
             type: "Run front-end"
         },
-        { name: `${translations[language].comingSoon}`, description: "Coming soon", link: "/", img: '/coming-soon.png', disabled: true },
-        { name: `${translations[language].comingSoon}`, description: "Coming soon", link: "/", img: '/coming-soon.png', disabled: true },
-        { name: `${translations[language].comingSoon}`, description: "Coming soon", link: "/", img: '/coming-soon.png', disabled: true },
-        { name: `${translations[language].comingSoon}`, description: "Coming soon", link: "/", img: '/coming-soon.png', disabled: true },
+        { name: `${translations[language].comingSoon}`, description: "Coming soon", link: "/", img: '/soon.png', disabled: true },
+        { name: `${translations[language].comingSoon}`, description: "Coming soon", link: "/", img: '/soon.png', disabled: true },
+        { name: `${translations[language].comingSoon}`, description: "Coming soon", link: "/", img: '/soon.png', disabled: true },
+        { name: `${translations[language].comingSoon}`, description: "Coming soon", link: "/", img: '/soon.png', disabled: true },
     ];
 
     const handleShowMore = () => {

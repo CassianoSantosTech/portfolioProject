@@ -1,33 +1,38 @@
 .social {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  color: black;
 }
 
 .social a {
-    height: 50px;
-    width: 50px;
-    border: 1px solid white;
-    border-radius: 100%;
-    cursor: pointer;
+  height: 50px;
+  width: 50px;
+  border: 1px solid black;
+  border-radius: 100%;
+  cursor: pointer;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
 
 }
 
 @keyframes pulse {
-    0%, 100% {
-      opacity: 1;
-    }
-    50% {
-      opacity: .5;
-    }
+
+  0%,
+  100% {
+    opacity: 1;
   }
 
+  50% {
+    opacity: .5;
+  }
+}
+
 .social a:hover {
-    color: #64ffda;
-    animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  color: black;
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
 }

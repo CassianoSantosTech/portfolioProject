@@ -16,7 +16,7 @@
   }
 
   50% {
-    border-right-color: #64ffda;
+    border-right-color: black;
   }
 }
 
@@ -34,13 +34,15 @@
 
 @keyframes morphing {
   0% {
-      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   }
+
   50% {
-      border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
+    border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%;
   }
+
   100% {
-      border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
   }
 }
 
@@ -58,8 +60,8 @@
   justify-content: center;
   height: 100vh;
   text-align: center;
-  background-color: #0a192f;
-  color: #64ffda;
+  background-color: white;
+  color: black;
   overflow: hidden;
 }
 
@@ -69,7 +71,7 @@
   width: 300px;
   height: 300px;
   margin-bottom: 20px;
-  border: 2px solid #64ffda;
+  border: 2px solid black;
   scale: 1.1;
 }
 
@@ -78,14 +80,14 @@
   margin: 10px 0;
   overflow: hidden;
   white-space: nowrap;
-  border-right: 2px solid #64ffda;
+  border-right: 2px solid black;
   animation: typing 4s steps(30, end), blink 1s step-end infinite;
   animation-fill-mode: forwards;
 }
 
 .welcome-content p {
   font-size: 18px;
-  color: #ccd6f6;
+  color: black;
   opacity: 0;
   animation: fadeIn 2s ease-in-out 4s forwards;
 }

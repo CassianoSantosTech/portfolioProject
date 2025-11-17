@@ -3,7 +3,7 @@
     left: 0;
     width: 100%;
     height: 50px;
-    background-color: #112240;
+    background-color: white;
     z-index: 10;
     display: flex;
     align-items: center;
@@ -41,8 +41,8 @@
     position: absolute;
     top: 180%;
     transform: translateX(-200%);
-    background-color: #112240;
-    color: #fff;
+    background-color: white;
+    color: black;
     text-align: center;
     padding: 5px 8px;
     border-radius: 4px;
@@ -53,6 +53,10 @@
     transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
 }
 
+.translate-style {
+    color: black;
+}
+
 .tooltip::after {
     content: "";
     position: absolute;
@@ -61,7 +65,7 @@
     transform: translateX(-50%);
     border-width: 6px;
     border-style: solid;
-    border-color: #112240 transparent transparent transparent;
+    border-color: white transparent transparent transparent;
 }
 
 .tooltip-container:hover .tooltip {
@@ -72,7 +76,7 @@
 .icon-phone,
 .icon-mac {
     font-size: 20px;
-    color: #64ffda;
+    color: black;
     display: none;
 }
 
@@ -99,7 +103,7 @@
 }
 
 .nav-links a {
-    color: #64ffda;
+    color: black;
     font-weight: bold;
     text-transform: uppercase;
     font-size: 12px;
@@ -107,7 +111,7 @@
 }
 
 .nav-links a:hover {
-    color: #ccd6f6;
+    color:#8892b0;
 }
 
 .hamburger {
@@ -120,7 +124,7 @@
 .hamburger .bar {
     width: 20px;
     height: 2px;
-    background-color: #64ffda;
+    background-color: black;
 }
 
 .app.iphone .hamburger {
@@ -137,7 +141,7 @@
     position: absolute;
     top: 50px;
     right: 10px;
-    background-color: #112240;
+    background-color: white;
     padding: 8px;
     border-radius: 8px;
 }

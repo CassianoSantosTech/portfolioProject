@@ -43,7 +43,7 @@ export default function Header({ onChangeViewMode }: HeaderProps) {
           <span className="bar"></span>
         </div>
         <section className="tooltip-container translate-section">
-          <button onClick={toggleLanguage}>
+          <button className="translate-style" onClick={toggleLanguage}>
           <MdTranslate></MdTranslate>
           </button>
           <span className="tooltip">{translations[language].changeLanguage}</span>
