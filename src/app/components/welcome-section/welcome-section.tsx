@@ -11,7 +11,7 @@ export default function WelcomeSection() {
         <section id="welcome" className="welcome-section">
             <div className="welcome-content">
                 <div className='img-container'>
-                    <img src="/me-gibi.jpeg" alt="Cassiano Photo" className="profile-photo" />
+                    <img src="/me-in-vatican.jpeg" alt="Cassiano Photo" className="profile-photo" />
                 </div>
                 <h1>Cassiano Santos</h1>
                 <p>{translations[language].welcomeDescription}</p>
