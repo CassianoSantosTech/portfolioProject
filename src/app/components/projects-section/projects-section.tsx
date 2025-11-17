@@ -15,14 +15,14 @@ export default function ProjectSection() {
             sourceLink: "https://github.com/CassianoSantosTech/portfolioProject",
             demoLink: "https://cassianosantos-dev.vercel.app/",
             img: '/face-id-96.png',
-            type: "Run front-end"
+            type: "Run frontend"
         },
         {
             name: "Greencycle API",
             description: "API contruída para gerenciar plataforma gestão de resíduos sólidos usando JAVA 21. Mais informações no README do projeto!",
             sourceLink: "https://github.com/CassianoSantosTech/greecycle-fiap",
             img: '/bay-leaf-96.png',
-            type: "Backend-project"
+            type: "Backend project"
         },
         {
             name: "Dev Task & Time Tracker",
@@ -30,7 +30,7 @@ export default function ProjectSection() {
             sourceLink: "https://github.com/CassianoSantosTech/dev-task-tracker",
             demoLink: "https://chromewebstore.google.com/detail/Dev%20Task%20%26%20Time%20Tracker/bjchfgehhcaeonecaopcmbaomdndmlca",
             img: '/dev_track_icon_128.png',
-            type: "Run front-end",
+            type: "Extension project",
         },
         { name: `${translations[language].comingSoon}`, description: "Coming soon", link: "/", img: '/soon.png', disabled: true },
         { name: `${translations[language].comingSoon}`, description: "Coming soon", link: "/", img: '/soon.png', disabled: true },
