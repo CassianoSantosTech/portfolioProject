@@ -8,17 +8,16 @@ export function Information() {
 
     return (
         <div className="infos">
-            {/* <SectionTitle text={translations[language].languages} /> */}
             <div className="languages-info">
                 <span>{translations[language].portugueseLanguage}</span>
                 <span>{translations[language].englishLanguage}</span>
             </div>
-
-            {/* <SectionTitle text={translations[language].educational} /> */}
             <div className="educational-info">
                 <span>{translations[language].educationalDescription}</span>
+                <span>{translations[language].sqlCertification}</span>
+                <span>{translations[language].fullStackCertification}</span>
+                <span>{translations[language].cs50Certification}</span>
             </div>
-
         </div>
     );
 }

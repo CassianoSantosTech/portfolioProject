@@ -10,14 +10,6 @@ export default function ProjectSection() {
 
     const projects = [
         {
-            name: `${translations[language].personalPage}`,
-            description: "Página construída para passar as principais informações pessoais de forma genérica, podendo facilmente ser ajustado para uma outra pessoa. Linguagens e tecnologias utilizadas: TypeScript e ReactJS!",
-            sourceLink: "https://github.com/CassianoSantosTech/portfolioProject",
-            demoLink: "https://cassianosantos-dev.vercel.app/",
-            img: '/face-id-96.png',
-            type: "Run frontend"
-        },
-        {
             name: "Greencycle API",
             description: "API contruída para gerenciar plataforma gestão de resíduos sólidos usando JAVA 21. Mais informações no README do projeto!",
             sourceLink: "https://github.com/CassianoSantosTech/greecycle-fiap",
@@ -31,6 +23,14 @@ export default function ProjectSection() {
             demoLink: "https://chromewebstore.google.com/detail/Dev%20Task%20%26%20Time%20Tracker/bjchfgehhcaeonecaopcmbaomdndmlca",
             img: '/dev_track_icon_128.png',
             type: "Extension project",
+        },
+        {
+            name: `${translations[language].personalPage}`,
+            description: "Página construída para passar as principais informações pessoais de forma genérica, podendo facilmente ser ajustado para uma outra pessoa. Linguagens e tecnologias utilizadas: TypeScript e ReactJS!",
+            sourceLink: "https://github.com/CassianoSantosTech/portfolioProject",
+            demoLink: "https://cassianosantos-dev.vercel.app/",
+            img: '/face-id-96.png',
+            type: "Run frontend"
         },
         { name: `${translations[language].comingSoon}`, description: "Coming soon", link: "/", img: '/soon.png', disabled: true },
         { name: `${translations[language].comingSoon}`, description: "Coming soon", link: "/", img: '/soon.png', disabled: true },
