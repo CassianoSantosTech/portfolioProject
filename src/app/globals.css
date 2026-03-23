@@ -2,10 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Design Tokens ──────────────────────────────────────────────────────── */
+:root {
+  /* Colors */
+  --color-bg: white;
+  --color-text: black;
+  --color-bg-muted: whitesmoke;
+  --color-text-muted: #8892b0;
+  --color-border-accent: #132f59;
+  --color-accent-purple: #777cf4;
+  --color-accent-pink: #f47777;
+
+  /* macOS window control dots */
+  --color-circle-red: #ff5f56;
+  --color-circle-yellow: #ffbd2e;
+  --color-circle-green: #27c93f;
+
+  /* Shadows */
+  --shadow-sm: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0px 4px 6px rgba(0, 0, 0, 0.2);
+
+  /* Typography */
+  --text-xs: 12px;
+  --text-sm: 14px;
+  --text-base: 16px;
+  --text-lg: 18px;
+  --text-xl: 20px;
+  --text-2xl: 28px;
+  --text-3xl: 36px;
+
+  /* Aliases referenced by existing components */
+  --text-primary: var(--color-text);
+  --text-secondary: var(--color-text-muted);
+
+  /* Layout */
+  --section-padding: 80px 20px;
+
+  /* Border radius */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 10px;
+  --radius-xl: 20px;
+  --radius-full: 50%;
+
+  /* Transitions */
+  --transition-fast: 0.3s ease;
+  --transition-base: 0.4s ease-in-out;
+  --transition-slow: 0.7s ease;
+
+  /* Z-index scale */
+  --z-header: 100;
+  --z-cursor: 99999;
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+@media (pointer: fine) {
+  * {
+    cursor: none !important;
+  }
 }
 
 html {
@@ -42,4 +101,42 @@ ul {
 
 main {
   padding-top: 0;
+}
+
+/* ── Scroll-triggered animations ───────────────────────────────────────── */
+
+.animate-fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition-delay: var(--anim-delay, 0s);
+}
+
+.animate-fade-left {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+  transition-delay: var(--anim-delay, 0s);
+}
+
+.animate-scale {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  transition-delay: var(--anim-delay, 0s);
+}
+
+.animate-fade-up.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.animate-fade-left.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.animate-scale.is-visible {
+  opacity: 1;
+  transform: scale(1);
 }

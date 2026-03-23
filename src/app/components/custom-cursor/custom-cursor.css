@@ -1,0 +1,49 @@
+.cursor-dot,
+.cursor-ring {
+    position: fixed;
+    border-radius: var(--radius-full);
+    pointer-events: none;
+    z-index: var(--z-cursor);
+    opacity: 0;
+    will-change: transform;
+    transition: opacity var(--transition-fast);
+}
+
+.cursor-dot {
+    top: -5px;
+    left: -5px;
+    width: 10px;
+    height: 10px;
+    background-color: var(--color-text);
+    transition: opacity var(--transition-fast), transform 0.1s ease;
+}
+
+.cursor-dot--hidden {
+    transform: scale(0) !important;
+}
+
+.cursor-ring {
+    top: -22px;
+    left: -22px;
+    width: 44px;
+    height: 44px;
+    border: 1.5px solid var(--color-text);
+    transition: opacity var(--transition-fast), width 0.35s ease, height 0.35s ease,
+        top 0.35s ease, left 0.35s ease, background-color 0.35s ease;
+}
+
+.cursor-ring--expanded {
+    width: 64px;
+    height: 64px;
+    top: -32px;
+    left: -32px;
+    background-color: rgba(0, 0, 0, 0.06);
+}
+
+/* Hide custom cursor on touch/mobile devices */
+@media (pointer: coarse) {
+    .cursor-dot,
+    .cursor-ring {
+        display: none;
+    }
+}

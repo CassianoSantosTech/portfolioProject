@@ -2,6 +2,7 @@
 import { useState } from "react";
 import AboutSection from "./components/about-section/about-section";
 import ContactsSection from "./components/contacts-section/contacts-section";
+import CustomCursor from "./components/custom-cursor/custom-cursor";
 import Footer from "./components/footer/footer";
 import Header from "./components/header/header";
 import ProjectSection from "./components/projects-section/projects-section";
@@ -23,6 +24,7 @@ export default function Home() {
 
   return (
     <LanguageProvider>
+      <CustomCursor />
       <div className={`app ${viewMode}`}>
         <div className="frame">
           <Header onChangeViewMode={handleChangeViewMode} />

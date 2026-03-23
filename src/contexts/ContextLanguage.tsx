@@ -1,5 +1,6 @@
+'use client';
 import { createContext, useContext, useEffect, useState } from "react";
-
+import type { ReactNode } from "react";
 
 const translations = {
     en: {
@@ -37,7 +38,7 @@ const translations = {
         phoneFrame: "Formato celular",
         laptopFrame: "Formato notebook",
         welcomeDescription: "Um Desenvolvedor Full Stack apaixonado por criar código limpo e eficiente.",
-        aboutDescription: "Minha trajetória na tecnologia é marcada por marcos importantes: sou graduado em Análise e Desenvolvimento de Sistemas pela FIAP, comecei com cursos como o CS50 de Harvard, conquistei certificações em SQL e Full Stack e desenvolvi alguns projetos próprios. Cada etapa, desde o primeiro ‘Hello World’ até a entrega de soluções completas, reforçou minha paixão por aprender e inovar. Hoje, sigo evoluindo, buscando sempre novos desafios e colaborando em equipes que valorizam crescimento e criatividade. No meu tempo livre, foco em manter um estilo de vida saudável jogando basquete e surfando. Essas atividades me ajudam a manter a energia e o equilíbrio tanto na vida pessoal quanto profissional.",
+        aboutDescription: "Minha trajetória na tecnologia é marcada por marcos importantes: sou graduado em Análise e Desenvolvimento de Sistemas pela FIAP, comecei com cursos como o CS50 de Harvard, conquistei certificações em SQL e Full Stack e desenvolvi alguns projetos próprios. Cada etapa, desde o primeiro 'Hello World' até a entrega de soluções completas, reforçou minha paixão por aprender e inovar. Hoje, sigo evoluindo, buscando sempre novos desafios e colaborando em equipes que valorizam crescimento e criatividade. No meu tempo livre, foco em manter um estilo de vida saudável jogando basquete e surfando. Essas atividades me ajudam a manter a energia e o equilíbrio tanto na vida pessoal quanto profissional.",
         languages: "Idiomas",
         portugueseLanguage: "🇧🇷 PT-BR idioma nativo",
         englishLanguage: "🇺🇸 EN - Inglês",
@@ -54,28 +55,38 @@ const translations = {
         comingSoon: "Em breve",
         contacts: "Contatos"
     }
+} as const;
+
+export type Language = keyof typeof translations;
+export type TranslationKey = keyof typeof translations['en'];
+
+type LanguageContextType = {
+    language: Language;
+    toggleLanguage: () => void;
+    translations: typeof translations;
 };
 
-const LanguageContext = createContext<any>({
+const LanguageContext = createContext<LanguageContextType>({
     language: "pt",
-    toggleLanguage: () => { },
-    translations: translations,
+    toggleLanguage: () => {},
+    translations,
 });
 
-export const LanguageProvider = ({ children }: any) => {
+export function LanguageProvider({ children }: { children: ReactNode }) {
+    const [language, setLanguage] = useState<Language>("pt");
 
-    const [language, setLanguage] = useState<any>("pt");
     useEffect(() => {
-        const lang = localStorage.getItem("lang");
-        if (lang && lang !== language) {
-            setLanguage(lang);
+        const stored = localStorage.getItem("lang") as Language | null;
+        if (stored && stored !== language && stored in translations) {
+            setLanguage(stored);
         }
         // eslint-disable-next-line react-hooks/exhaustive-deps
     }, []);
+
     const toggleLanguage = () => {
-        const newLang = language === "pt" ? "en" : "pt";
-        setLanguage(newLang);
-        localStorage.setItem("lang", newLang);
+        const next: Language = language === "pt" ? "en" : "pt";
+        setLanguage(next);
+        localStorage.setItem("lang", next);
     };
 
     return (
@@ -83,7 +94,8 @@ export const LanguageProvider = ({ children }: any) => {
             {children}
         </LanguageContext.Provider>
     );
-
 }
 
-export const useLanguage = () => useContext(LanguageContext);
+export function useLanguage(): LanguageContextType {
+    return useContext(LanguageContext);
+}

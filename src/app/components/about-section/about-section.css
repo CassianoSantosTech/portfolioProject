@@ -2,25 +2,24 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  padding: 80px 20px;
+  padding: var(--section-padding);
   text-align: center;
-  background-color: white;
+  background-color: var(--color-bg);
   min-height: 100vh;
   box-sizing: border-box;
 }
 
 .about-section h2 {
-  font-size: 28px;
-  color: black;
+  font-size: var(--text-2xl);
+  color: var(--color-text);
   margin-bottom: 20px;
 }
 
 .about-section p {
-  font-size: 16px;
-  color: black;
+  font-size: var(--text-base);
+  color: var(--color-text);
   margin-bottom: 10px;
   text-align: justify;
-
 }
 
 .languages-info {
@@ -40,17 +39,17 @@
 }
 
 .tech-stack li {
-  background-color: white;
-  color: black;
+  background-color: var(--color-bg);
+  color: var(--color-text);
   padding: 10px 20px;
-  border-radius: 20px;
-  font-size: 14px;
+  border-radius: var(--radius-xl);
+  font-size: var(--text-sm);
   font-weight: bold;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-sm);
 }
 
 .timer {
-  color: black;
+  color: var(--color-text);
   display: flex;
   flex-direction: column;
   align-items: start;

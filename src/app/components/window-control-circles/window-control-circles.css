@@ -7,12 +7,12 @@
 .circle {
     width: 12px;
     height: 12px;
-    border-radius: 50%;
+    border-radius: var(--radius-full);
     display: inline-block;
     cursor: pointer;
     position: relative;
     animation: pulse 2s infinite ease-in-out;
-    transition: transform 0.2s ease-in-out;
+    transition: transform var(--transition-fast);
 }
 
 .tooltip-container {
@@ -29,28 +29,28 @@
     top: 120%;
     left: 1000% !important;
     transform: translateX(-100%);
-    background-color: white;
-    color: black;
+    background-color: var(--color-bg);
+    color: var(--color-text);
     text-align: center;
     padding: 5px 8px;
-    border-radius: 4px;
-    font-size: 12px;
+    border-radius: var(--radius-sm);
+    font-size: var(--text-xs);
     line-height: 1.4;
     white-space: nowrap;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
-    transition: opacity 0.2s ease-in-out, visibility 0.2s ease-in-out;
+    box-shadow: var(--shadow-md);
+    transition: opacity var(--transition-fast), visibility var(--transition-fast);
 }
 
 .circle.red {
-    background-color: #ff5f56;
+    background-color: var(--color-circle-red);
 }
 
 .circle.yellow {
-    background-color: #ffbd2e;
+    background-color: var(--color-circle-yellow);
 }
 
 .circle.green {
-    background-color: #27c93f;
+    background-color: var(--color-circle-green);
 }
 
 .circle:hover {
@@ -62,7 +62,6 @@
     animation: none !important;
     opacity: 0.5;
 }
-
 
 @keyframes pulse {
     0% {

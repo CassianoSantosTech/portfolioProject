@@ -1,10 +1,11 @@
-/* eslint-disable @next/next/no-img-element */
 'use client';
-
+import Image from 'next/image';
 import { useLanguage } from '@/contexts/ContextLanguage';
 import { useEffect, useRef, useState } from 'react';
 import { SectionTitle } from '../sectionTitle/sectionTitle';
 import './programming-languages.css';
+
+const SCROLL_SPEED = 0.075; // px per ms
 
 const languages = [
     { name: 'JavaScript', icon: '/programming-languages/js.png' },
@@ -21,6 +22,7 @@ const languages = [
     { name: 'SQL', icon: '/programming-languages/sql.png' },
 ];
 
+const duplicatedLanguages = [...languages, ...languages];
 
 export default function ProgrammingLanguages() {
     const { language, translations } = useLanguage();
@@ -34,14 +36,12 @@ export default function ProgrammingLanguages() {
         if (!slider) return;
         let frame: number;
         let lastTimestamp = performance.now();
-        const speed = 0.075; // px per ms
 
         function animate(now: number) {
             if (!slider) return;
             if (!isDragging) {
                 const elapsed = now - lastTimestamp;
-                slider.scrollLeft += speed * elapsed;
-                // Loop infinito suave
+                slider.scrollLeft += SCROLL_SPEED * elapsed;
                 const listLength = slider.scrollWidth / 2;
                 if (slider.scrollLeft >= listLength) {
                     slider.scrollLeft -= listLength;
@@ -50,6 +50,7 @@ export default function ProgrammingLanguages() {
             lastTimestamp = now;
             frame = requestAnimationFrame(animate);
         }
+
         frame = requestAnimationFrame(animate);
         return () => cancelAnimationFrame(frame);
     }, [isDragging]);
@@ -72,13 +73,11 @@ export default function ProgrammingLanguages() {
         if (!isDragging) return;
         e.preventDefault();
         if (sliderRef.current) {
-            const x = e.clientX;
-            const walk = (x - startX) * 1.1; // scroll sensitivity
+            const walk = (e.clientX - startX) * 1.1;
             sliderRef.current.scrollLeft = scrollLeft - walk;
         }
     };
 
-    // Touch events
     const handleTouchStart = (e: React.TouchEvent) => {
         setIsDragging(true);
         setStartX(e.touches[0].clientX);
@@ -88,22 +87,15 @@ export default function ProgrammingLanguages() {
     const handleTouchMove = (e: React.TouchEvent) => {
         if (!isDragging) return;
         if (sliderRef.current) {
-            const x = e.touches[0].clientX;
-            const walk = (x - startX) * 1.1;
+            const walk = (e.touches[0].clientX - startX) * 1.1;
             sliderRef.current.scrollLeft = scrollLeft - walk;
         }
     };
 
-    // Duplicar a lista para efeito infinito
-    const duplicatedLanguages = [...languages, ...languages];
-
     return (
         <div className="programming-section">
             <SectionTitle text={translations[language].skillsAndTools} />
-            <div
-                className="programming-languages-container"
-                style={{ overflow: 'hidden' }}
-            >
+            <div className="programming-languages-container" style={{ overflow: 'hidden' }}>
                 <div
                     className="languages-list slider"
                     ref={sliderRef}
@@ -116,14 +108,16 @@ export default function ProgrammingLanguages() {
                     onTouchEnd={handleTouchEnd}
                     onTouchMove={handleTouchMove}
                 >
-                    {duplicatedLanguages.map((language, index) => (
+                    {duplicatedLanguages.map((lang, index) => (
                         <div key={index} className="language-item" style={{ display: 'flex' }}>
-                            <img
-                                src={language.icon}
-                                alt={language.name}
+                            <Image
+                                src={lang.icon}
+                                alt={lang.name}
+                                width={50}
+                                height={60}
                                 className="language-icon"
                             />
-                            <span className="language-name">{language.name}</span>
+                            <span className="language-name">{lang.name}</span>
                         </div>
                     ))}
                 </div>
