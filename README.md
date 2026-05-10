@@ -1,61 +1,87 @@
-# Cassiano Santos - Personal Portfolio
+# cassianosantos.dev
 
-Bem-vindo ao repositório do meu portfólio pessoal. Este projeto foi desenvolvido para demonstrar minhas habilidades como desenvolvedor Front end, compartilhar meus projetos e conectar-me com outros profissionais e oportunidades.
+Personal portfolio at <https://cassianosantos-dev.vercel.app>.
 
-## 🎯 Objetivo
+Single-page, bilingual (PT-BR / EN), three themes (dark / light / mono).
+Editorial layout with sections for hero, about, stack, experience,
+recommendations, projects, education, now, and contact.
 
-O objetivo principal deste projeto é apresentar uma página pessoal responsiva, moderna e minimalista que destaque minha experiência, habilidades e projetos.
+## Stack
 
-## 🛠️ Tecnologias Utilizadas
+- Next.js 14 — App Router
+- TypeScript — strict
+- Tailwind CSS — design tokens via CSS variables
+- next-intl — i18n routing (`/pt`, `/en`)
+- next/font — Newsreader (display) + JetBrains Mono (UI mono); Geist Sans via the `geist` package
 
-- **Next.js**: Framework React para renderização do lado do servidor e construção de aplicações web modernas.
-- **React**: Biblioteca JavaScript para construção de interfaces de usuário.
-- **Tailwind CSS**: Framework de estilos para criação de designs rápidos e consistentes.
-- **CSS Puro**: Para customizações específicas.
-- **Vercel**: Hospedagem do projeto para deploy contínuo e rápido.
+## Run locally
 
-## 🚀 Funcionalidades
+```bash
+npm install
+npm run dev
+```
 
-- **Seções Dinâmicas**:
-  - **Welcome**: Boas-vindas com uma animação elegante.
-  - **About Me**: Informações sobre minha experiência e habilidades.
-  - **Skills and Tools**: Linguagens de programação e ferramentas com um carrossel interativo.
-  - **Projects**: Lista de projetos com links para o repositório no GitHub.
-  - **Contato**: Links para redes sociais e email.
+Then open <http://localhost:3000>. Root redirects to `/pt` or `/en` based on
+`Accept-Language`.
 
-- **Responsividade**: Totalmente adaptado para dispositivos móveis e desktops.
-- **Acessibilidade**: Uso de semântica HTML e boas práticas para garantir uma experiência inclusiva.
+## Build
 
-## 🖼️ Layout
+```bash
+npm run build
+npm start
+```
 
-O design foi pensado para transmitir profissionalismo e modernidade, utilizando cores escuras com destaques em verde e azul. Elementos minimalistas foram adotados para foco no conteúdo.
+Produces `/pt` and `/en` as fully prerendered SSG, an Edge-rendered OG image
+per locale, plus `/sitemap.xml` and `/robots.txt`.
 
-## 🌐 Deploy
-O projeto está hospedado no Vercel. Toda alteração no código do repositório principal é automaticamente publicada no endereco abaixo:
-*https://cassianosantos-dev.vercel.app/*
+## Layout
 
-## 🗂️ Possíveis Melhorias Futuras
-Integração com APIs externas para projetos dinâmicos.
-Seção de blog para compartilhar artigos técnicos.
-Adicionar testes automatizados com Jest e React Testing Library.
-Melhorar animações para mais interatividade.
+```
+src/
+├── app/
+│   ├── [locale]/         # localized routes: layout, page, opengraph-image
+│   ├── globals.css       # design tokens (dark/light/mono + 4 accents)
+│   ├── layout.tsx        # root passthrough (next-intl pattern)
+│   ├── robots.ts         # /robots.txt
+│   └── sitemap.ts        # /sitemap.xml with hreflang
+├── components/
+│   ├── layout/           # TopBar, Footer, ThemeProvider, SkipLink
+│   ├── sections/         # Hero, About, Stack, Experience, Recommendations,
+│   │                       Projects, Education, NowBlock, HumanNote, Contact
+│   └── ui/               # Section, Chip, LangToggle, ThemeToggle
+├── content/              # source of truth for copy: pt.ts, en.ts, types.ts
+├── i18n/                 # next-intl routing + request config
+├── lib/theme.ts          # theme tokens + inline boot script
+├── messages/             # UI strings: pt.json, en.json
+└── middleware.ts         # next-intl locale routing
+```
 
-## 📬 Contato
-Se você deseja entrar em contato comigo ou colaborar, pode me enviar um email:
-cassianosantosneto@gmail.com
+## Content
 
-## 📦 Estrutura do Projeto
+All visible copy lives in `src/content/pt.ts` and `src/content/en.ts`. Both
+files conform to the `SiteContent` shape in `src/content/types.ts`. Updates
+should mirror across both files.
 
-```plaintext
-.
-├── public/               # Assets públicos (imagens, ícones)
-├── src/
-│   ├── app/              # Estrutura principal do Next.js
-│   │   ├── components/   # Componentes reutilizáveis
-│   │   ├── pages/        # Páginas do projeto
-│   │   └── styles/       # Estilos globais e específicos
-├── .gitignore            # Arquivos a serem ignorados pelo Git
-├── package.json          # Dependências e scripts do projeto
-└── README.md             # Documentação do projeto
+Short UI labels (nav, toggles, footer) live in `src/messages/{pt,en}.json`.
 
+## Themes
 
+Toggle in the top bar — full segmented pill on desktop, single cycle button
+on mobile. Persists in `localStorage`. An inline script in `<head>` applies
+the saved theme before hydration to avoid flash.
+
+- `dark` (default)
+- `light`
+- `mono` — terminal-style, overrides serif/sans to a mono stack
+
+Accent palette: amber (default), sage, slate, terra. Switchable via
+`data-accent` on `<html>`.
+
+## Deploy
+
+Hosted on Vercel. Auto-deploys on push to `main`. No environment variables
+required.
+
+## Contact
+
+<cassianosantosneto@gmail.com>

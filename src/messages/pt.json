@@ -1,0 +1,42 @@
+{
+  "nav": {
+    "about": "Sobre",
+    "stack": "Stack",
+    "experience": "Experiência",
+    "projects": "Projetos",
+    "education": "Formação",
+    "contact": "Contato"
+  },
+  "topbar": {
+    "brand": "cassiano.dev",
+    "openToWork": "Aberto a conversas"
+  },
+  "lang": {
+    "pt": "PT",
+    "en": "EN",
+    "switchTo": "Mudar idioma"
+  },
+  "theme": {
+    "label": "Tema",
+    "dark": "Escuro",
+    "light": "Claro",
+    "mono": "Mono"
+  },
+  "common": {
+    "skipToContent": "Pular para o conteúdo",
+    "now": "agora",
+    "openExternal": "Abrir em nova aba"
+  },
+  "projects": {
+    "problem": "Problema",
+    "approach": "Abordagem",
+    "stack": "Stack",
+    "links": "Links",
+    "expand": "+ case study",
+    "collapse": "− case study"
+  },
+  "footer": {
+    "version": "v2.0",
+    "copyright": "© {year} Cassiano Santos"
+  }
+}
