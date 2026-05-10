@@ -9,11 +9,41 @@ const withNextIntl = createNextIntlPlugin("./src/i18n/request.ts");
  * actions, fetches, cookies, or user-supplied input anywhere. The only
  * inline content is the hardcoded theme boot script in <head>.
  *
- * 'unsafe-inline' on script-src is therefore an accepted tradeoff: it lets
- * the boot script run without nonces or hashes (which would require
- * runtime/build coupling that doesn't pay off here). 'unsafe-inline' on
- * style-src is required by next/font and Tailwind utility-class injection.
+ * Dev vs prod CSP:
+ *   - In `next dev`, webpack uses `eval-source-map` and Fast Refresh opens
+ *     a WebSocket to /_next/webpack-hmr. So dev requires 'unsafe-eval' on
+ *     scripts and an opened-up connect-src; without those, React never
+ *     hydrates locally and onClick handlers silently no-op.
+ *   - In production builds, Next emits no eval and no HMR socket, so we
+ *     drop those allowances. 'unsafe-inline' on scripts is still kept for
+ *     the hardcoded theme boot script (one line, hardcoded, no user input
+ *     reaches it). 'unsafe-inline' on styles is required by next/font and
+ *     Tailwind utility injection — there is no way around it without
+ *     migrating to nonces, which breaks static generation.
  */
+const isDev = process.env.NODE_ENV !== "production";
+
+const scriptSrc = ["'self'", "'unsafe-inline'", isDev && "'unsafe-eval'"]
+  .filter(Boolean)
+  .join(" ");
+
+const connectSrc = ["'self'", isDev && "ws:", isDev && "wss:"]
+  .filter(Boolean)
+  .join(" ");
+
+const csp = [
+  "default-src 'self'",
+  `script-src ${scriptSrc}`,
+  "style-src 'self' 'unsafe-inline'",
+  "img-src 'self' data: blob:",
+  "font-src 'self' data:",
+  `connect-src ${connectSrc}`,
+  "frame-ancestors 'none'",
+  "base-uri 'self'",
+  "form-action 'self'",
+  "upgrade-insecure-requests",
+].join("; ");
+
 const SECURITY_HEADERS = [
   {
     key: "Strict-Transport-Security",
@@ -26,21 +56,7 @@ const SECURITY_HEADERS = [
     key: "Permissions-Policy",
     value: "camera=(), microphone=(), geolocation=(), interest-cohort=()",
   },
-  {
-    key: "Content-Security-Policy",
-    value: [
-      "default-src 'self'",
-      "script-src 'self' 'unsafe-inline'",
-      "style-src 'self' 'unsafe-inline'",
-      "img-src 'self' data: blob:",
-      "font-src 'self' data:",
-      "connect-src 'self'",
-      "frame-ancestors 'none'",
-      "base-uri 'self'",
-      "form-action 'self'",
-      "upgrade-insecure-requests",
-    ].join("; "),
-  },
+  { key: "Content-Security-Policy", value: csp },
 ];
 
 /** @type {import('next').NextConfig} */

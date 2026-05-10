@@ -275,8 +275,8 @@ export const enContent: SiteContent = {
       },
       {
         label: "Instagram",
-        value: "@cassianosantos",
-        href: "https://www.instagram.com/cassianosantos/",
+        value: "@cassianosantos_300",
+        href: "https://www.instagram.com/cassianosantos_300/",
       },
     ],
   },
