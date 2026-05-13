@@ -15,7 +15,8 @@ export const enContent: SiteContent = {
     lede:
       "I've been shipping production code since 2023. Java and Node APIs, React and Angular interfaces, integrations that need to be reliable before they're pretty. I focus on technical decisions that survive the next quarter.",
     meta: [
-      { label: "Current role", value: "Junior III" },
+      // Re-enable when promoted to Pleno:
+      // { label: "Current role", value: "Pleno" },
       { label: "Experience", value: "~3 years" },
       { label: "Education", value: "FIAP · 2025" },
       { label: "Languages", value: "PT · EN" },

@@ -15,7 +15,8 @@ export const ptContent: SiteContent = {
     lede: "Escrevo código em produção desde 2023. APIs em Java e Node, interfaces em React e Angular, integrações que precisam ser confiáveis antes de bonitas. Foco em decisões técnicas que sobrevivem ao próximo trimestre.",
     meta: [
       // §5 — Hero meta
-      { label: "Posição atual", value: "Júnior III" },
+      // Reativar ao ser promovido a Pleno:
+      // { label: "Posição atual", value: "Pleno" },
       { label: "Experiência", value: "~3 anos" },
       { label: "Formação", value: "FIAP · 2025" },
       { label: "Idiomas", value: "PT · EN" },
