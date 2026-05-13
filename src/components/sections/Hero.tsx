@@ -28,7 +28,7 @@ export function Hero({ content }: Props) {
             priority
             className="object-cover"
           />
-          <div className="absolute left-3 bottom-3 inline-flex items-center gap-2 rounded-full border border-line-strong bg-bg-raised/90 backdrop-blur px-3 py-1.5 font-mono text-[11px] uppercase tracking-wider text-fg-strong">
+          <div className="absolute left-3 bottom-3 inline-flex items-center gap-2 rounded-full border border-white/20 bg-black/55 backdrop-blur px-3 py-1.5 font-mono text-[11px] uppercase tracking-wider text-white">
             <span className="status-dot" aria-hidden />
             <span>{content.statusPill}</span>
           </div>
